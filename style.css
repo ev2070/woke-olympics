@@ -1,3 +1,8 @@
+/*Barlow Condensed, Inter, and Roboto fonts imported*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 /* Remove whitespace on the
 perimeter of the webpage */
 body, html {
@@ -5,3 +10,393 @@ body, html {
   padding: 0;
 }
 
+/*The landing will take up the whole page and
+be divided by the logo and title with a dark 
+background image*/
+#landing {
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 39vw 59vw;
+  grid-template-rows: 1fr;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/olympics-landing.jpg);
+}
+
+/*The title will be large, white, and centered*/
+#landing h1 {
+  font-size: 12vw;
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-align: center;
+  padding: 0;
+}
+
+/*The logo will have a height 30% 
+of the viewport's height*/
+#landing img {
+  height: 30vw;
+}
+
+/*The landing will have its title and logo
+vertically and horizontally centered*/
+#landing div { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*The h1 elements will be fairly large, will take
+up 80% of the viewport's width and be centered 
+relative to the page with vertical padding*/
+h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 8vw;
+
+  width: 80vw;
+  margin: auto;
+
+  padding: 10vh 0;
+}
+
+/*The h2 elements will be slightly large sized*/
+h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 4vw;
+}
+
+/*The h3 elements will be relatively medium sized,
+take up 80% of the viewport's width and centered 
+in the page with a bottom margin*/
+h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.2vw;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 10vh;
+}
+
+/*A section will have bottom padding 
+to match the top padding of its h1*/
+.section {
+  padding-bottom: 10vh;
+}
+
+/*Gray sections will have a gray background*/
+.gray-section {
+  background-color: #f1f4f7;
+}
+
+/*Red sections will have a red background*/
+.red-section {
+  background-color: red;
+}
+
+/*The last h3 element in a 
+section will have no margin*/
+.section h3:last-of-type {
+  margin-bottom: 0;
+}
+
+/*The p elements will be relatively small*/
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5vw;
+}
+
+/*The p elements in the sections will 
+also take up 70% of the viewport's width 
+and be centered relative to the page with 
+a bit of bottom margin*/
+.section p {
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 5vh;
+}
+
+/*The p elements in the scrolling sections
+will have two as much bottom margin*/
+.scrolling p {
+  margin-bottom: 10vh;
+}
+
+/*The definition section will be in Roboto
+to match the font that Google uses in its
+definitions*/
+#definition {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Word with a gray highlight will have
+a gray background with curved corners, 
+and be bolded with some horizontal padding */
+.gray-highlight {
+  background-color: #f1f3f4;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 0 0.5vw;
+  font-size: 1.2vw;
+}
+
+/*Some content can be italicized*/
+.italicize {
+  font-style: italic;
+}
+
+/*Some content can be in gray*/
+.gray-text {
+  color: #70757a;
+}
+
+/*https://stackoverflow.com/questions/16344354/how-to-make-blinking-flashing-text-with-css-3*/
+/*All elements within a blink container 
+will continuously lose and gain opacity*/
+.blink > * {
+  animation: blinking .75s linear infinite;
+}
+
+@keyframes blinking {
+  50% {
+    opacity: 0;
+  }
+}
+
+/*https://blog.hubspot.com/website/scrolling-text-css*/
+/*Some sections will have scrolling content where
+overflow of content will be hidden. These sections
+will have a width 80% of the viewport's and be
+centered in its container*/
+.scrolling {
+  overflow: hidden;
+  width: 80vw;
+  margin: auto;
+}
+
+/*The "Olympics" section will have two scrolling 
+divs side by side with equal widths*/
+.two-scrolling {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+/*Scrolling sections that are side by side
+will have a width 39% of the viewport's*/
+.two-scrolling .scrolling {
+  width: 39vw;
+}
+
+/*RIGHT TO LEFT*/
+/*Moves content from right to left within 15 seconds forever*/
+.right-left {
+  -moz-transform:    translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform:         translateX(100%);
+  
+  -moz-animation:    right-to-left 15s linear infinite;
+  -webkit-animation: right-to-left 15s linear infinite;
+  animation:         right-to-left 15s linear infinite;
+}
+
+/*Firefox support*/
+@-moz-keyframes right-to-left {
+  from { -moz-transform: translateX( 100%); }
+  to   { -moz-transform: translateX(-100%); }
+}
+
+/*Chrome support*/
+@-webkit-keyframes right-to-left {
+  from { -webkit-transform: translateX( 100%); }
+  to   { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes right-to-left {
+  from {
+    -moz-transform:    translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform:         translateX(100%);
+  }
+  to {
+    -moz-transform:    translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform:         translateX(-100%);
+  }
+}
+
+/*LEFT TO RIGHT*/
+/*Moves content from left to right within 15 seconds forever*/
+.left-right {
+  text-align: right;
+  -moz-transform:    translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform:         translateX(-100%);
+  -moz-animation:    left-to-right 15s linear infinite;
+  -webkit-animation: left-to-right 15s linear infinite;
+  animation:         left-to-right 15s linear infinite;
+}
+
+/*Firefox support*/
+@-moz-keyframes left-to-right {
+  from { -moz-transform: translateX(-100%); }
+  to   { -moz-transform: translateX( 100%); }
+}
+
+/*Chrome support*/
+@-webkit-keyframes left-to-right {
+  from { -webkit-transform: translateX(-100%); }
+  to   { -webkit-transform: translateX( 100%); }
+}
+
+@keyframes left-to-right {
+  from {
+    -moz-transform:    translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform:         translateX(-100%);
+  }
+  to {
+    -moz-transform:    translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform:         translateX(100%);
+  }
+}
+
+/*BOTTOM TO TOP*/
+/*Moves content from bottom to top forever and 
+must retain the original height of the content*/
+.up {
+  height: 100%;
+  -moz-transform:    translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform:         translateY(100%);
+}
+
+/*Content in "Olympics" section will take 18
+seconds to complete one iteration of up animation
+and text will be centered*/
+.up1 {
+  text-align: center;
+  -moz-animation:    scroll-up 18s linear infinite;
+  -webkit-animation: scroll-up 18s linear infinite;
+  animation:         scroll-up 18s linear infinite;
+}
+
+/*Content in "Final Words" section will take 15
+seconds to complete one iteration of up animation*/
+.up2 {
+  -moz-animation:    scroll-up 15s linear infinite;
+  -webkit-animation: scroll-up 15s linear infinite;
+  animation:         scroll-up 15s linear infinite;
+}
+
+/*p elements in "Olympics" will have 
+a width 35% of the viewport's*/
+.up1 p {
+  width: 35vw;
+}
+
+/*p elements in "Final Words" will
+have a width 50% of the viewport's*/
+.up2 p {
+  width: 50vw;
+}
+
+/*The last p element in an up 
+section will have no margin*/
+.up p:last-of-type {
+  margin-bottom: 0;
+}
+
+/*Firefox support*/
+@-moz-keyframes scroll-up {
+  from { -moz-transform: translateY( 100%); }
+  to   { -moz-transform: translateY(-100%); }
+}
+
+/*Chrome support*/
+@-webkit-keyframes scroll-up {
+  from { -webkit-transform: translateY( 100%); }
+  to   { -webkit-transform: translateY(-100%); }
+}
+
+@keyframes scroll-up {
+  from {
+    -moz-transform:    translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform:         translateY(100%);
+  }
+  to {
+    -moz-transform:    translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform:         translateY(-100%);
+  }
+}
+
+/*TOP TO BOTTOM*/
+/*Moves content from top to bottom for 1 second forever 
+and must retain the original height of the content*/
+.down {
+  height: 100%;
+  text-align: center;
+  -moz-transform:    translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform:         translateY(-100%);
+  -moz-animation:    scroll-down 1s linear infinite;
+  -webkit-animation: scroll-down 1s linear infinite;
+  animation:         scroll-down 1s linear infinite;
+}
+
+/*Firefox support*/
+@-moz-keyframes scroll-down {
+  from { -moz-transform: translateY(-100%); }
+  to   { -moz-transform: translateY( 100%); }
+}
+
+/*Chrome support*/
+@-webkit-keyframes scroll-down {
+  from { -webkit-transform: translateY(-100%); }
+  to   { -webkit-transform: translateY( 100%); }
+}
+
+@keyframes scroll-down {
+  from {
+    -moz-transform:    translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform:         translateY(-100%);
+  }
+  to {
+    -moz-transform:    translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform:         translateY(100%);
+  }
+}
+
+/*The videos section will have 
+two videos side by side*/
+.videos {
+  display: grid;
+  grid-template-columns: 49vw 49vw;
+  grid-template-rows: 70vh;
+}
+
+/*The videos section will have two flexboxes
+each of which will have their videos centered
+horizontally*/
+.videos div {
+  display: flex;
+  justify-content: center;
+}
+
+/*A video will have a width 40% of the viewport's*/
+iframe {
+  width: 40vw;
+}
+
+/*The footer will have a height of 28% of the
+viewports height and have its content vertically
+and horizontally centered*/
+footer {
+  height: 28vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
